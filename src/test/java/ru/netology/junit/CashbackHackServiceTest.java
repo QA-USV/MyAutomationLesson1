@@ -1,14 +1,13 @@
 package ru.netology.junit;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.testng.Assert.*;
 
-class CashbackHackServiceTest {
+public class CashbackHackServiceTest {
 
     @Test
-    void calculateRemain() {
+    public void calculateRemain() {
 
         CashbackHackService service = new CashbackHackService();
         int amount = 800;
@@ -16,7 +15,7 @@ class CashbackHackServiceTest {
         int expected = 200;
         int actual = service.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(actual, expected);
     }
 
     @Test
@@ -28,7 +27,7 @@ class CashbackHackServiceTest {
         int expected = 1000;
         int actual = service.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(actual, expected);
     }
 
     @Test
@@ -40,7 +39,19 @@ class CashbackHackServiceTest {
         int expected = 999;
         int actual = service.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void calculateRemainIfAmountThousand() {
+
+        CashbackHackService service = new CashbackHackService();
+        int amount = 1000;
+
+        int expected = 0;
+        int actual = service.remain(amount);
+
+        assertEquals(actual, expected);
     }
 
     @Test
@@ -52,6 +63,18 @@ class CashbackHackServiceTest {
         int expected = 990;
         int actual = service.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void calculateRemainIfAmountTwoThousand() {
+
+        CashbackHackService service = new CashbackHackService();
+        int amount = 2000;
+
+        int expected = 0;
+        int actual = service.remain(amount);
+
+        assertEquals(actual, expected);
     }
 }

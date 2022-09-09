@@ -2,7 +2,7 @@ package ru.netology.junit;
 
 public class CashbackHackService {
 
-    private final int boundary = 1000;
+    public final int boundary = 1000;
 
     public int remain(int amount) {
 
