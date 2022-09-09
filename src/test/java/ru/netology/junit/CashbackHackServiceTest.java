@@ -43,7 +43,7 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    void calculateRemainIfAmountThousand() {
+    void calculateRemainIfAmountOneThousand() {
 
         CashbackHackService service = new CashbackHackService();
         int amount = 1000;
