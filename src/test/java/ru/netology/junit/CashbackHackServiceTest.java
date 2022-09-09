@@ -1,13 +1,14 @@
 package ru.netology.junit;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
+import org.junit.Test;
 
-class CashbackHackServiceTest {
+import static org.junit.Assert.assertEquals;
+
+public class CashbackHackServiceTest {
 
     @Test
-    void calculateRemain() {
+    public void calculateRemain() {
 
         CashbackHackService service = new CashbackHackService();
         int amount = 800;
@@ -15,11 +16,11 @@ class CashbackHackServiceTest {
         int expected = 200;
         int actual = service.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void calculateRemainIfAmountZero() {
+    public void calculateRemainIfAmountZero() {
 
         CashbackHackService service = new CashbackHackService();
         int amount = 0;
@@ -27,11 +28,11 @@ class CashbackHackServiceTest {
         int expected = 1000;
         int actual = service.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void calculateRemainIfAmountOne() {
+    public void calculateRemainIfAmountOne() {
 
         CashbackHackService service = new CashbackHackService();
         int amount = 1;
@@ -39,11 +40,11 @@ class CashbackHackServiceTest {
         int expected = 999;
         int actual = service.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void calculateRemainIfAmountOneThousand() {
+    public void calculateRemainIfAmountOneThousand() {
 
         CashbackHackService service = new CashbackHackService();
         int amount = 1000;
@@ -51,11 +52,11 @@ class CashbackHackServiceTest {
         int expected = 0;
         int actual = service.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void calculateRemainIfAmountMoreThenThousand() {
+    public void calculateRemainIfAmountMoreThenThousand() {
 
         CashbackHackService service = new CashbackHackService();
         int amount = 1010;
@@ -63,11 +64,11 @@ class CashbackHackServiceTest {
         int expected = 990;
         int actual = service.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void calculateRemainIfAmountTwoThousand() {
+    public void calculateRemainIfAmountTwoThousand() {
 
         CashbackHackService service = new CashbackHackService();
         int amount = 2000;
@@ -75,6 +76,6 @@ class CashbackHackServiceTest {
         int expected = 0;
         int actual = service.remain(amount);
 
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 }
